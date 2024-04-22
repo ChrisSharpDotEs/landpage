@@ -717,13 +717,27 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script charset="utf-8" src=""></script>
+    <style>
+        article {
+            min-height: 100vh;
+        }
+        .card {
+            width: 250px;
+        }
+        .navbar {
+            
+        }
+        .scrolled{
+            background-color: #000;
+            opacity: 1;
+            animation: bg-color 1s ease;
+        }
+    </style>
 </head>
 
 <body>
     <header role="header">
-        <nav
-            class="js-navbar-scroll navbar fixed-top navbar-expand-lg navbar-transparent navbar-dark navbar-bg-onscroll--fade p-4">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-transparent navbar-dark p-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     <img src="" alt="MI PERFIL" style="width: 100px;">
@@ -764,21 +778,46 @@
                                 UNA BREVE INTRODUCCIÓN
                             </p>
                             <h1 class="display-2 display-md-1 u-font-accent font-weight-light">
-                                <span class="d-none d-md-inline-block">-</span>JLJAÑLSKDF</h1>
-                            <a href=""
-                                class="text-uppercase text-white font-weight-bold u-font-size-75">
+                                <span class="d-none d-md-inline-block"></span>AÑAÑAÑÑAÑA
+                            </h1>
+                            <a href="" class="text-uppercase text-white font-weight-bold u-font-size-75">
                                 Descubre ahora
                             </a>
                             <span class="fa fa-angle-down d-block"></span>
+                            <button class="btn bg-light">Click aqui</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </header>
+    <main>
+        <article class="d-flex justify-content-center align-items-center">
+            <section>
+                <div class="card-group">
+                    <div class="card">
+                        <img class="card-img-top" src="" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Title</h4>
+                            <p class="card-text">Text</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </article>
+    </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+<script>
+    let navbar = document.getElementsByClassName("navbar")[0];
+    console.log("loaded")
+    window.addEventListener('scroll', function(){
+        console.log(window.scrollY/1000)
+        navbar.style.backgroundColor = `rgba(0, 0, 0, ${window.scrollY/1000})`;
+    }) 
+</script>
 
 </html>
