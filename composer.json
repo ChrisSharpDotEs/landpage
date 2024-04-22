@@ -1,0 +1,10 @@
+{
+    "name": "usertest/php",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Usertest\\Php\\": "src/"
+        }
+    },
+    "require": {}
+}
