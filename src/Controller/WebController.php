@@ -1,9 +1,9 @@
 <?php
 
-require './autoload.php';
+require '../autoload.php';
 
 class WebController{
     public function index(){
-        require './src/views/header.php';
+        require '../src/views/header.php';
     }
 }

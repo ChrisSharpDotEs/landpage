@@ -717,22 +717,6 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        article {
-            min-height: 100vh;
-        }
-        .card {
-            width: 250px;
-        }
-        .navbar {
-            
-        }
-        .scrolled{
-            background-color: #000;
-            opacity: 1;
-            animation: bg-color 1s ease;
-        }
-    </style>
 </head>
 
 <body>
@@ -742,7 +726,6 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="" alt="MI PERFIL" style="width: 100px;">
                 </a>
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo"
                     aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -780,11 +763,8 @@
                             <h1 class="display-2 display-md-1 u-font-accent font-weight-light">
                                 <span class="d-none d-md-inline-block"></span>AÑAÑAÑÑAÑA
                             </h1>
-                            <a href="" class="text-uppercase text-white font-weight-bold u-font-size-75">
-                                Descubre ahora
-                            </a>
                             <span class="fa fa-angle-down d-block"></span>
-                            <button class="btn bg-light">Click aqui</button>
+                            <button class="btn btn-main">Click aqui</button>
                         </div>
                     </div>
                 </div>
@@ -792,18 +772,17 @@
         </section>
     </header>
     <main>
+    <article class="d-flex justify-content-center align-items-center">
+        
+    </article>
         <article class="d-flex justify-content-center align-items-center">
             <section>
-                <div class="card-group">
+                <div class="card-container">
                     <div class="card">
-                        <img class="card-img-top" src="" alt="Title" />
-                        <div class="card-body">
-                            <h4 class="card-title">Title</h4>
-                            <p class="card-text">Text</p>
-                        </div>
+                        <div class="front">Parte delantera</div>
+                        <div class="back">Parte trasera</div>
                     </div>
                 </div>
-
             </section>
         </article>
     </main>
@@ -814,9 +793,9 @@
 <script>
     let navbar = document.getElementsByClassName("navbar")[0];
     console.log("loaded")
-    window.addEventListener('scroll', function(){
-        console.log(window.scrollY/1000)
-        navbar.style.backgroundColor = `rgba(0, 0, 0, ${window.scrollY/1000})`;
+    window.addEventListener('scroll', function () {
+        console.log(window.scrollY / 1000)
+        navbar.style.backgroundColor = `rgba(0, 0, 0, ${window.scrollY / 1000})`;
     }) 
 </script>
 

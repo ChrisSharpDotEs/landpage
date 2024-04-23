@@ -8,7 +8,10 @@ function routeRequest(string $url){
 
     if(!$controllerAction){
         http_response_code((404));
-        header("Location: src/views/error/notfound.html");
+        print_r($routes);
+        print($url);
+
+        # header("Location: ../src/views/error/notfound.html");
         exit;
     }
 
