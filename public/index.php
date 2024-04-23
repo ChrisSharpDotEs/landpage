@@ -4,9 +4,12 @@
     require '../src/router.php';
     try{
         $url = $_SERVER['REQUEST_URI'];
-        $url = str_replace('/php/public', '', $url);
-        
-        routeRequest($url);
+        if(str_contains($url,'?')){
+            $url = str_replace('/php/public/index.php?', '', $url);
+            routeRequest($url);
+        } else{
+            routeRequest($url);
+        }
     }
     catch(Error $e){
         var_dump ($e->getMessage());

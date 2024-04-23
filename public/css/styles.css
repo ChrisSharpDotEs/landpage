@@ -175,6 +175,7 @@ article {
   min-height: 100vh;
 }
 
+/*------ Card flip styles ---------- */
 .card {
   width: 250px;
   height: 200px;
@@ -187,7 +188,6 @@ article {
 .card {
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  position: relative;
 }
 
 .card-container:hover .card {
@@ -551,6 +551,10 @@ button.btn-main:hover {
 /*----------------------------------
     Tabs
   ------------------------------------*/
+.navbar{
+  transition: background-color 1s;
+}
+
 .nav-tabs--v1 .nav-item {
   margin-right: 3px;
 }

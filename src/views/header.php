@@ -772,18 +772,14 @@
         </section>
     </header>
     <main>
-    <article class="d-flex justify-content-center align-items-center">
-        
-    </article>
         <article class="d-flex justify-content-center align-items-center">
-            <section>
-                <div class="card-container">
-                    <div class="card">
-                        <div class="front">Parte delantera</div>
-                        <div class="back">Parte trasera</div>
-                    </div>
+            <form action="">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder=""/>
                 </div>
-            </section>
+
+            </form>
         </article>
     </main>
 </body>
