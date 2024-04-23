@@ -1,10 +1,10 @@
 <?php
 require "../autoload.php";
-
-function routeRequest(string $url){
+use Controller\WebController;
+function routeRequest(string $url, $param){
     $routes = array(
         '/' => 'WebController/index',
-        '/users' => 'UserController/index/email@example.com'
+        '/users' => 'UserController/findAll'
     );
 
     $controllerAction = $routes[$url] ?? null;
@@ -14,11 +14,11 @@ function routeRequest(string $url){
         header("Location: ../src/views/error/notfound.html");
         exit;
     }
-
-    list($controllerName, $actionName, $param) = explode("/", $controllerAction);
-
-    require_once 'Controller/' . $controllerName . '.php';
+    list($controllerName, $actionName) = explode("/", $controllerAction);
+    
+    require '../src/Controller/' . $controllerName . '.php';
 
     $controller = new $controllerName();
     $controller -> $actionName($param);
+    
 }

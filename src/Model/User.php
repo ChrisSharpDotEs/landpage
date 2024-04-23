@@ -9,6 +9,10 @@ class User {
     private $date_of_creation;
     private $age;
 
+    public function __construct(){
+        
+    }
+
     public function getId(){
         return $this->id;
     }
