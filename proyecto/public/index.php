@@ -1,13 +1,13 @@
 <?php
     session_start();
     require '../src/router.php';
-    
+
     try{
         $url = $_SERVER['REQUEST_URI'];
         if(str_contains($url,'?')){
-            $url = str_replace('/php/public/index.php?', '', $url);
+            $url = str_replace('/php/proyecto/public/index.php?', '', $url);
         } else{
-            $url = str_replace('/php/public', '', $url);
+            $url = str_replace('/php/proyecto/public', '', $url);
         }
         routeRequest($url, null);
     }
