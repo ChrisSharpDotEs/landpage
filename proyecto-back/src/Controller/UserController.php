@@ -1,4 +1,5 @@
 <?php
+
 use Service\UserService;
 
 class UserController{
@@ -22,5 +23,12 @@ class UserController{
 
         header('Content-Type: application/json');
         print(json_encode($result));
+    }
+
+    public function create($username, $useremail, $userpass){
+        $userService = new UserService();
+        $result = $userService -> create($username, $useremail, $userpass);
+        $userService -> close();
+        return $result;
     }
 }

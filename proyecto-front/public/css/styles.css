@@ -156,6 +156,11 @@ h6 {
   border: solid 3px #fff;
 }
 
+.info-box{
+  padding: 1rem;
+  background-color: rgba(151, 230, 135, 0.829);
+}
+
 /*----------------------------------
     Border Radius
   ------------------------------------*/
