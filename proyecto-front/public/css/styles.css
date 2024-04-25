@@ -17,10 +17,38 @@ body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.6;
   color: #1b1e24;
+  background-color: ivory !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga", "kern";
   text-rendering: optimizelegibility;
+}
+
+#cards {
+  flex: 1;
+}
+
+.js-parallax {
+  background-image: url("../img/img1.jpg");
+  background-position: 50% 0px;
+}
+
+.card-left {
+  background-color: gray;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  width: 60%;
+}
+
+.card-right {
+  background-color: ivory;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px;
+  padding: 2rem;
+  font-size: 2rem;
+  position: relative;
+  left: 9rem;
+  top: 4rem;
 }
 
 a {
