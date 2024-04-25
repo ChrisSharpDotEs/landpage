@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lan="es">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Inicio</title>
+    <title>Comerciales</title>
     <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,700" rel="stylesheet">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
@@ -723,10 +723,10 @@
 </head>
 
 <body>
-    <header role="header">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-transparent navbar-dark p-4">
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-transparent navbar-light p-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="index.html">
                     <img src="" alt="MI PERFIL" style="width: 100px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo"
@@ -758,85 +758,30 @@
                 </div>
             </div>
         </nav>
-        <section class="js-parallax u-promo-block">
-            <div class="container text-white u-ver-center u-content-space">
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="text-center">
-                            <p class="h6 text-uppercase u-letter-spacing-sm mb-0">
-                                UNA BREVE INTRODUCCIÓN
-                            </p>
-                            <h1 class="display-2 display-md-1 u-font-accent font-weight-light">
-                                <span class="d-none d-md-inline-block"></span>MI PERFIL
-                            </h1>
-                            <p><span class="fa fa-angle-down"></span></p>
-                            <button class="btn btn-main">Click aqui</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section style="height: 20vh;"></section>
     </header>
     <main>
         <article class="d-flex justify-content-center align-items-center">
-        </article>
-        <article class="bg-secondary d-flex align-items-center">
-            <div class="container my-5 align-items-center">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-9">
-                        <h1 class="mb-3">Contact Us</h1>
-                        <form id="formulario" action="../../proyecto-back/src/router.php?/test" method="post">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="your-name" class="form-label">Your Name</label>
-                                    <input type="text" class="form-control" id="your-name" name="your-name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="your-surname" class="form-label">Your Surname</label>
-                                    <input type="text" class="form-control" id="your-surname" name="your-surname"
-                                        required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="your-email" class="form-label">Your Email</label>
-                                    <input type="email" class="form-control" id="your-email" name="your-email" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="your-subject" class="form-label">Your Subject</label>
-                                    <input type="text" class="form-control" id="your-subject" name="your-subject">
-                                </div>
-                                <div class="col-12">
-                                    <label for="your-message" class="form-label">Your Message</label>
-                                    <textarea class="form-control" id="your-message" name="your-message" rows="5"
-                                        required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <button data-res="" type="submit"
-                                                class="btn btn-dark w-100 fw-bold">Send</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
                 </div>
             </div>
         </article>
+        <article></article>
     </main>
-    <footer class="bg-dark p-5 text-light">
-        <p>&copy; 2020 All Rights Reserved | CrisOffice Inc.</p>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        let navbar = document.getElementsByClassName("navbar")[0];
+        window.addEventListener('scroll', function () {
+            navbar.style.backgroundColor = `rgba(0, 0, 0, ${window.scrollY / 1000})`;
+        }) 
+    </script>
+    <script src="js/index.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<script>
-    let navbar = document.getElementsByClassName("navbar")[0];
-    window.addEventListener('scroll', function () {
-        navbar.style.backgroundColor = `rgba(0, 0, 0, ${window.scrollY / 1000})`;
-    }) 
-</script>
-<script src="js/index.js"></script>
 
 </html>

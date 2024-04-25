@@ -7,7 +7,7 @@ class ValidateData
     {
     }
 
-    public function validarNombre($nombre)
+    public function validateName($nombre)
     {
         $nombre = trim($nombre);
 
@@ -24,5 +24,13 @@ class ValidateData
         }
 
         return true;
+    }
+
+    public function validateEmail($email){
+
+    }
+
+    public function validateUserSession($userSession){
+        
     }
 }

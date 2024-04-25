@@ -1,5 +1,6 @@
 <?php
 use Util\ValidateData;
+use Util\EmailManager;
 
 class WebController{
     public function index(){
@@ -8,8 +9,14 @@ class WebController{
 
     public function test(){
         $validate = new ValidateData();
-        $result = $validate -> validarNombre($_POST['nombre']);
-        header('Content-Type: application/json');
-        echo json_encode($result);
+        
+        $email = $_POST['your-email'];
+        $subject = $_POST['your-subject'];
+        $message = $_POST['your-message'];
+
+        $valid = $validate->validarNombre($_POST['your-name']);
+        $sent = EmailManager::send($email, $subject, $message, $email, "cris.publico.cp001@gmail.com", $cc = null, $bcc = null);
+        
+        echo json_encode($valid);
     }
 }
