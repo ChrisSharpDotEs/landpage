@@ -1,7 +1,7 @@
 <?php
 namespace Service;
 
-use Model\Conexion;
+use Service\Conexion;
 use PDO;
 use PDOException;
 
