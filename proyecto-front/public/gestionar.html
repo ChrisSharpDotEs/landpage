@@ -20,21 +20,125 @@
     <header></header>
     <main>
         <article>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog modal-xl">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
                         <div class="modal-body">
-                            ...
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                        aria-selected="true">
+                                        Lista clientes
+                                    </button>
+                                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-profile" type="button" role="tab"
+                                        aria-controls="nav-profile" aria-selected="false">
+                                        Citas
+                                    </button>
+                                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-contact" type="button" role="tab"
+                                        aria-controls="nav-contact" aria-selected="false">
+                                        Nuevo cliente
+                                    </button>
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane p-2 border fade show active" id="nav-home" role="tabpanel"
+                                    aria-labelledby="nav-home-tab">
+                                    <table class="table table-stripped table-hover">
+                                        <thead>
+                                            <th>Id</th>
+                                            <th>Nombre</th>
+                                            <th>Localidad</th>
+                                            <th>Código</th>
+                                            <th>Numero contrato</th>
+                                            <th>Fecha contrato</th>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <!-- Segunda pestaña-->
+                                <div class="tab-pane p-2 border fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="nav-profile-tab">
+                                    <table class="table table-stripped table-hover">
+                                        <thead>
+                                            <th>Id Cita</th>
+                                            <th>Nombre</th>
+                                            <th>Código Cliente</th>
+                                            <th>Localidad</th>
+                                            <th>Fecha</th>
+                                            <th>Hora</th>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <!-- Tercera pestaña -->
+                                <div class="tab-pane p-2 border fade" id="nav-contact" role="tabpanel"
+                                    aria-labelledby="nav-contact-tab">
+                                    <!-- Contact 1 - Bootstrap Brain Component -->
+                                    <section class="bg-light py-3 py-md-5">
+                                        <form action="#!">
+                                            <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
+                                                <div class="col-12">
+                                                    <label for="fullname" class="form-label">Full Name
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" id="fullname"
+                                                        name="fullname" value="" required>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <label for="email" class="form-label">Email <span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-envelope"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                                                            </svg>
+                                                        </span>
+                                                        <input type="email" class="form-control" id="email" name="email"
+                                                            value="" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <label for="phone" class="form-label">Phone
+                                                        Number</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-telephone"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                                            </svg>
+                                                        </span>
+                                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                                            value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="message" class="form-label">Message
+                                                        <span class="text-danger">*</span></label>
+                                                    <textarea class="form-control" id="message" name="message" rows="3"
+                                                        required></textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-grid">
+                                                        <button class="btn btn-primary btn-lg"
+                                                            type="submit">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
@@ -42,43 +146,34 @@
             </div>
             <div class="container my-4">
                 <div class="d-flex justify-content-center gap-2">
-                    <div class="card mb-4 p-5" style="flex: 1">
-                        <img src="https://via.placeholder.com/150"
-                            class="card-img-top rounded-circle mx-auto d-block mt-3" alt="...">
+                    <div class="card mb-4 p-5" style="flex: 1" data-toggle="modal" data-target="#exampleModal">
+                        <img src="img/pw.jpeg" class="card-img-top rounded-circle mx-auto d-block mt-3" alt="..."
+                            style="width: 250px">
                         <div class="card-body text-center">
                             <h5 class="card-title">Card 1</h5>
                             <p class="card-text">
                                 <span class="font-weight-bold">Campo 1:</span> Valor 1<br>
                                 <span class="font-weight-bold">Campo 2:</span> Valor 2
                             </p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ver
-                                progreso</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Consultar
+                            </button>
                         </div>
                     </div>
                     <div class="card mb-4 p-5" style="flex: 1">
-                        <img src="https://via.placeholder.com/150"
-                            class="card-img-top rounded-circle mx-auto d-block mt-3" alt="...">
+                        <img src="img/pw.jpeg" class="card-img-top rounded-circle mx-auto d-block mt-3" alt="..."
+                            style="width: 250px">
                         <div class="card-body text-center">
                             <h5 class="card-title">Card 2</h5>
                             <p class="card-text">
                                 <span class="font-weight-bold">Campo 1:</span> Valor 1<br>
                                 <span class="font-weight-bold">Campo 2:</span> Valor 2
                             </p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ver
-                                progreso</button>
-                        </div>
-                    </div>
-                    <div class="card mb-4 p-5" style="flex: 1">
-                        <img src="https://via.placeholder.com/150"
-                            class="card-img-top rounded-circle mx-auto d-block mt-3" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Card 3</h5>
-                            <p class="card-text">
-                                <span class="font-weight-bold">Campo 1:</span> Valor 1<br>
-                                <span class="font-weight-bold">Campo 2:</span> Valor 2
-                            </p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ver
-                                progreso</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Consultar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -90,8 +185,6 @@
     </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
@@ -101,6 +194,87 @@
         navbar.style.backgroundColor = `rgba(0, 0, 0, ${window.scrollY / 1000})`;
     }) 
 </script>
-<script src="js/index.js"></script>
+<script>
+
+    function peticionPost(url, datos, action) {
+        fetch(url, {
+            method: 'POST',
+            body: datos
+        })
+            .then(response => {
+                if (response.ok && response.status == 200) {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                action(data);
+            })
+            .catch(error => console.error(error));
+    }
+
+    function peticionGet(url, action) {
+        fetch(url)
+            .then(response => {
+                if (response.ok && response.status == 200) {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                action(data);
+            })
+            .catch(error => console.error(error));
+    }
+
+    function appendTableData(data, tbody) {
+
+        data.forEach(element => {
+            let row = document.createElement('tr');
+
+            Object.keys(element).forEach(item => {
+                let cell = document.createElement('td');
+                cell.appendChild(document.createTextNode(element[item]));
+                row.append(cell);
+            });
+
+            tbody.append(row);
+        });
+
+    }
+
+    function getCustomerData() {
+        let url = "../../proyecto-back/src/router.php?/getCustomers";
+        fetch(url)
+            .then(response => {
+                if (response.ok && response.status == 200) {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                appendTableData(data, document.getElementsByTagName("tbody")[0]);
+            })
+            .catch(error => console.error(error));
+    }
+
+    function getCitas() {
+        let url = "../../proyecto-back/src/router.php?/getCitas";
+        fetch(url)
+            .then(response => {
+                if (response.ok && response.status == 200) {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                appendTableData(data, document.getElementsByTagName("tbody")[1]);
+            })
+            .catch(error => console.error(error));
+    }
+
+    function init() {
+        getCustomerData();
+        getCitas();
+    }
+
+    window.onload = init();
+</script>
 
 </html>

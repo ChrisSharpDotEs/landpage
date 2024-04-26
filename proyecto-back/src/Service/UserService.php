@@ -19,11 +19,13 @@ class UserService extends Conexion{
             return $stmt->fetch(PDO::FETCH_ASSOC);
         } catch(PDOException $e){
             return $e -> getMessage();
+        } finally{
+            $this -> conexion = null;
         }
     }
 
     public function findAll(){
-        $query = "SELECT nombre, apellido, email, date_of_creation FROM Usuarios";
+        $query = "CALL obtener_clientes();";
 
         $stmt = $this->conexion->prepare($query);
         try{
@@ -31,6 +33,22 @@ class UserService extends Conexion{
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch(PDOException $e){
             return $e -> getMessage();
+        } finally{
+            $this -> conexion = null;
+        }
+    }
+
+    public function obtenerCitas(){
+        $query = "CALL obtener_citas();";
+
+        $stmt = $this->conexion->prepare($query);
+        try{
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e){
+            return $e -> getMessage();
+        } finally{
+            $this -> conexion = null;
         }
     }
 
@@ -48,6 +66,8 @@ class UserService extends Conexion{
             return true;
         } catch(PDOException){
             return false;
+        } finally{
+            $this -> conexion = null;
         }
     }
 }

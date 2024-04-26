@@ -3,7 +3,8 @@ function routeRequest(string $url, $param){
     $routes = array(
         '/' => 'WebController/index',
         '/users' => 'UserController/findAll',
-        '/test' => 'WebController/test'
+        '/getCustomers' => 'WebController/getCustomers',
+        '/getCitas' => 'WebController/getCitas'
     );
 
     $controllerAction = $routes[$url] ?? null;

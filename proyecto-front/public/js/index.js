@@ -31,13 +31,43 @@ function peticion(datos, action){
 }
 
 function init(){
+    getCustomerData();
     let formulario = document.querySelector('form');
     formulario.addEventListener('submit', function(ev){
         ev.preventDefault();
         const datos = new FormData(formulario);
 
-        peticion(datos, showResult);
+        
     });
+}
+
+function appendTableData(data){
+    data.forEach(element => {
+        let row = document.createElement('row');
+
+        Object.keys(element).forEach(item =>{
+            let cell = document.createElement('td');
+            cell.innerHTML = element[item];
+            row.append(cell);
+        });
+
+        let tbody = document.getElementsByTagName("tbody")[0];
+        tbody.append(row);
+    });
+}
+
+function getCustomerData(){
+    fetch("../../proyecto-back/src/router.php?/test")
+    .then(response =>{
+        if(response.ok && response.status == 200){
+            return response.json();
+        }
+    })
+    .then(data => {
+        console.log(data);
+        appendTableData(data);
+    })
+    .catch(error => console.error(error));
 }
 
 window.onload = init();

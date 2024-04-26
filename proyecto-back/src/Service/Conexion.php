@@ -15,7 +15,7 @@ class Conexion {
     public function __construct(){
         $this -> host = "localhost";
         $this -> port = "3306";
-        $this -> db = "testDB";
+        $this -> db = "departamento_ventas";
         $this -> user = "root";
         $this -> password = "password";
         $this -> dsn = "mysql:host={$this -> host}; port={$this-> port}; dbname={$this -> db}; charset=utf8mb4";

@@ -1,5 +1,6 @@
 <?php
 use Util\ValidateData;
+use Service\UserService;
 use Util\EmailManager;
 
 class WebController{
@@ -7,16 +8,21 @@ class WebController{
         require '../src/views/header.php';
     }
 
-    public function test(){
-        $validate = new ValidateData();
-        
-        $email = $_POST['your-email'];
-        $subject = $_POST['your-subject'];
-        $message = $_POST['your-message'];
+    public function getCustomers(){
+        $userService = new UserService();
 
-        $valid = $validate->validarNombre($_POST['your-name']);
-        $sent = EmailManager::send($email, $subject, $message, $email, "cris.publico.cp001@gmail.com", $cc = null, $bcc = null);
+        $result = $userService -> findAll();
+
+        print json_encode($result);
         
-        echo json_encode($valid);
+    }
+
+    public function getCitas(){
+        $userService = new UserService();
+
+        $result = $userService -> obtenerCitas();
+
+        print json_encode($result);
+        
     }
 }
