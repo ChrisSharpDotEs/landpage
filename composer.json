@@ -1,0 +1,17 @@
+{
+    "name": "cristian/landpage",
+    "type": "project",
+    "license": "GNU\\GLP",
+    "autoload": {
+        "psr-4": {
+            "Cristian\\Landpage\\Back\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cristian Diaz",
+            "email": "82599146+cleverChrisTest@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

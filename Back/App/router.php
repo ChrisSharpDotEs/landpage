@@ -1,5 +1,12 @@
 <?php
-function routeRequest(string $url, $param){
+namespace Back\App;
+require './autoload.php';
+
+use Back\App\Controller\WebController;
+
+use Error;
+use Exception;
+function routeRequest($url){
     $routes = array(
         '/' => 'WebController/index',
         '/users' => 'UserController/findAll',
@@ -8,30 +15,32 @@ function routeRequest(string $url, $param){
     );
 
     $controllerAction = $routes[$url] ?? null;
-
+    
     if(!$controllerAction){
         http_response_code((404));
         header("Location: ../../proyecto-front/public/error/notfound.html");
         exit;
     }
+
     list($controllerName, $actionName) = explode("/", $controllerAction);
     
-    require './Controller/' . $controllerName . '.php';
+    try{
+        require "./Controller/" . $controllerName . ".php";
 
-    $controller = new $controllerName();
-    $controller -> $actionName($param);
+        $controller = new $controllerName();
+
+        $controller->$actionName();
+
+    } catch (Error $e){
+        echo "Error: " . $e->getMessage();
+    }
+    //$controller -> $actionName();
 }
 
 try {
-    require "../autoload.php";
-
-    $url = $_SERVER['REQUEST_URI'];
-    if (str_contains($url, '?')) {
-        $url = str_replace('/php/proyecto-back/src/router.php?', '', $url);
-    } else {
-        $url = str_replace('/php/proyecto-front/public', '', $url);
-    }
-    routeRequest($url, null);
+    print_r(scandir("./"));
+    echo $url;
+    routeRequest($url);
 } catch (Error $e) {
     var_dump($e->getMessage());
 } catch (Exception $e){

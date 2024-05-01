@@ -30,17 +30,6 @@ function peticion(datos, action){
     .catch(error => console.error(error));
 }
 
-function init(){
-    getCustomerData();
-    let formulario = document.querySelector('form');
-    formulario.addEventListener('submit', function(ev){
-        ev.preventDefault();
-        const datos = new FormData(formulario);
-
-        
-    });
-}
-
 function appendTableData(data){
     data.forEach(element => {
         let row = document.createElement('row');
@@ -57,10 +46,16 @@ function appendTableData(data){
 }
 
 function getCustomerData(){
-    fetch("../../proyecto-back/src/router.php?/test")
+    fetch("../../proyecto-back/src/router.php?/getCustomers")
     .then(response =>{
         if(response.ok && response.status == 200){
-            return response.json();
+            try{
+                return response.json();
+            } catch(error){
+                console.log(error);
+                window.location.href = "./error.php";
+            }
+            
         }
     })
     .then(data => {
@@ -68,6 +63,17 @@ function getCustomerData(){
         appendTableData(data);
     })
     .catch(error => console.error(error));
+}
+
+function init(){
+    getCustomerData();
+    let formulario = document.querySelector('form');
+    formulario.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        const datos = new FormData(formulario);
+
+        
+    });
 }
 
 window.onload = init();

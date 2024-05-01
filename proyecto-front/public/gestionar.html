@@ -242,15 +242,16 @@
     }
 
     function getCustomerData() {
-        let url = "../../proyecto-back/src/router.php?/getCustomers";
+        let url = "./publicRouter.php?/getCustomers";
         fetch(url)
             .then(response => {
                 if (response.ok && response.status == 200) {
-                    return response.json();
+                    return response.text();
                 }
             })
             .then(data => {
-                appendTableData(data, document.getElementsByTagName("tbody")[0]);
+                console.log(data);
+                //appendTableData(data, document.getElementsByTagName("tbody")[0]);
             })
             .catch(error => console.error(error));
     }
@@ -260,18 +261,19 @@
         fetch(url)
             .then(response => {
                 if (response.ok && response.status == 200) {
-                    return response.json();
+                    return response.text();
                 }
             })
             .then(data => {
-                appendTableData(data, document.getElementsByTagName("tbody")[1]);
+                console.log(data);
+                //appendTableData(data, document.getElementsByTagName("tbody")[1]);
             })
             .catch(error => console.error(error));
     }
 
     function init() {
         getCustomerData();
-        getCitas();
+        //getCitas();
     }
 
     window.onload = init();

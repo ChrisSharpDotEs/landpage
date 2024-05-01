@@ -1,20 +1,17 @@
 <?php
-use Util\ValidateData;
-use Service\UserService;
-use Util\EmailManager;
+namespace Back\App\Controller;
 
-class WebController{
-    public function index(){
-        require '../src/views/header.php';
-    }
+use Back\App\Service\UserService;
+
+class WebController {
+    public function __construct(){}
 
     public function getCustomers(){
         $userService = new UserService();
 
         $result = $userService -> findAll();
 
-        print json_encode($result);
-        
+        echo json_encode($result);
     }
 
     public function getCitas(){
@@ -22,7 +19,6 @@ class WebController{
 
         $result = $userService -> obtenerCitas();
 
-        print json_encode($result);
-        
+        echo json_encode($result);
     }
 }
