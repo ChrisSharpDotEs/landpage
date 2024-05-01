@@ -4,7 +4,8 @@
     "license": "GNU\\GLP",
     "autoload": {
         "psr-4": {
-            "Cristian\\Landpage\\Back\\": "App/"
+            "Controller\\": "Back/App/Controller",
+            "Service\\": "Back/App/Service"
         }
     },
     "authors": [

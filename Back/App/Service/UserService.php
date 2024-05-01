@@ -1,7 +1,6 @@
 <?php
-namespace Back\App\Service;
-
-use Back\App\Service\Conexion;
+namespace Service;
+use Service\Conexion;
 
 use PDO;
 use PDOException;

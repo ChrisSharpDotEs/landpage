@@ -1,5 +1,5 @@
 <?php
-namespace Back\App\Controller;
+namespace Controller;
 
 class UserController{
     public function findUserById($email){

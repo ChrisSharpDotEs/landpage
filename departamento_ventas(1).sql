@@ -6,6 +6,8 @@
 -- Tiempo de generación: 25-04-2024 a las 14:19:52
 -- Versión del servidor: 8.0.36-0ubuntu0.22.04.1
 -- Versión de PHP: 8.1.2-1ubuntu2.15
+CREATE DATABASE departamento_ventas;
+USE departamento_ventas;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;

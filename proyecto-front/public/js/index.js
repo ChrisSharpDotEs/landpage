@@ -1,4 +1,4 @@
-let url = "../../proyecto-back/src/router.php?/test";
+let url = "../../Back/App/router.php?/test";
 
 function showResult(data){
     let formu = document.getElementById('formulario');
@@ -46,7 +46,7 @@ function appendTableData(data){
 }
 
 function getCustomerData(){
-    fetch("../../proyecto-back/src/router.php?/getCustomers")
+    fetch("../../Back/App/router.php?/getCustomers")
     .then(response =>{
         if(response.ok && response.status == 200){
             try{
@@ -59,7 +59,7 @@ function getCustomerData(){
         }
     })
     .then(data => {
-        console.log(data);
+        console.log("obtenido");
         appendTableData(data);
     })
     .catch(error => console.error(error));

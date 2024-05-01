@@ -246,12 +246,12 @@
         fetch(url)
             .then(response => {
                 if (response.ok && response.status == 200) {
-                    return response.text();
+                    return response.json();
                 }
             })
             .then(data => {
                 console.log(data);
-                //appendTableData(data, document.getElementsByTagName("tbody")[0]);
+                appendTableData(data, document.getElementsByTagName("tbody")[0]);
             })
             .catch(error => console.error(error));
     }

@@ -1,5 +1,5 @@
 <?php
-namespace Back\App\Service;
+namespace Service;
 
 use PDO;
 use PDOException;
@@ -18,7 +18,7 @@ class Conexion {
         $this -> port = "3306";
         $this -> db = "departamento_ventas";
         $this -> user = "root";
-        $this -> password = "password";
+        $this -> password = "password#A1";
         $this -> dsn = "mysql:host={$this -> host}; port={$this-> port}; dbname={$this -> db}; charset=utf8mb4";
         $this -> conexion = $this -> connect();
     }

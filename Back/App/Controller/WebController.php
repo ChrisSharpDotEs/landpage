@@ -1,7 +1,6 @@
 <?php
-namespace Back\App\Controller;
-
-use Back\App\Service\UserService;
+namespace Controller;
+use Service\UserService;
 
 class WebController {
     public function __construct(){}

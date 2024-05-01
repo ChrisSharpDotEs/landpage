@@ -1,11 +1,8 @@
 <?php
-namespace Back\App;
-require './autoload.php';
+require '../../vendor/autoload.php';
 
-use Back\App\Controller\WebController;
+use Controller\WebController;
 
-use Error;
-use Exception;
 function routeRequest($url){
     $routes = array(
         '/' => 'WebController/index',
@@ -25,24 +22,26 @@ function routeRequest($url){
     list($controllerName, $actionName) = explode("/", $controllerAction);
     
     try{
-        require "./Controller/" . $controllerName . ".php";
-
-        $controller = new $controllerName();
+        $controller = null;
+        switch($controllerName){
+            case "WebController":
+                $controller = new WebController();
+                break;
+                
+        }
 
         $controller->$actionName();
 
     } catch (Error $e){
-        echo "Error: " . $e->getMessage();
+        echo "Error: " . $e->getMessage() . " on line " . $e->getLine();
+        //print_r($e->getTrace());
     }
-    //$controller -> $actionName();
 }
 
 try {
-    print_r(scandir("./"));
-    echo $url;
     routeRequest($url);
 } catch (Error $e) {
-    var_dump($e->getMessage());
+    echo ($e->getMessage());
 } catch (Exception $e){
     var_dump($e);
 }

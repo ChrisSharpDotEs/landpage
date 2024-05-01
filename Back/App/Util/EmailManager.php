@@ -1,5 +1,4 @@
 <?php
-namespace Util;
 class EmailManager{
     public static function send($email, $subject, $message, $from = null, $to = null, $cc = null, $bcc = null){
         $cabecera = "\nFrom: $from\r\nTo: $to\r\nX-Mailer: PHP / " . phpversion();
