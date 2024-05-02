@@ -25,7 +25,7 @@ class UserService extends Conexion{
     }
 
     public function findAll(){
-        $query = "CALL obtener_clientes();";
+        $query = "CALL obtener_clientes_comercial(1);";
 
         $stmt = $this->conexion->prepare($query);
         try{
