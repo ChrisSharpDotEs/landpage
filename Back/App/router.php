@@ -1,36 +1,35 @@
 <?php
 require '../../vendor/autoload.php';
 
-use Controller\WebController;
+use Controller\CustomerController;
 
 function routeRequest($url){
     $routes = array(
         '/' => 'WebController/index',
         '/users' => 'UserController/findAll',
-        '/getCustomers' => 'WebController/getCustomers',
-        '/getCitas' => 'WebController/getCitas'
+        '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial'
     );
 
-    $controllerAction = $routes[$url] ?? null;
-    
+    list($controllerName, $actionName, $param) = explode("/", $url);
+    $controllerAction = $routes[$controllerName . "/" . $actionName] ?? null;
+
     if(!$controllerAction){
         http_response_code((404));
         header("Location: ../../proyecto-front/public/error/notfound.html");
         exit;
     }
-
-    list($controllerName, $actionName) = explode("/", $controllerAction);
     
+    list($controllerName, $actionName) = explode("/", $controllerAction);
+
     try{
-        $controller = null;
+        
         switch($controllerName){
-            case "WebController":
-                $controller = new WebController();
+            case "CustomerController":
+                $controller = new CustomerController();
+                $controller->$actionName($param);
                 break;
                 
         }
-
-        $controller->$actionName();
 
     } catch (Error $e){
         echo "Error: " . $e->getMessage() . " on line " . $e->getLine();

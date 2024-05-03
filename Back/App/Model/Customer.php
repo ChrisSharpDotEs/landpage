@@ -1,16 +1,21 @@
 <?php
-namespace Service;
-use Service\Conexion;
+namespace Model;
+
+use Model\Conexion;
 
 use PDO;
 use PDOException;
 
-class UserService extends Conexion{
+class Customer extends Conexion{
+    
+
     public function __construct(){
         parent::__construct();
     }
-    public function findUserByEmail($email){
-        $query = "SELECT nombre, apellido, email, date_of_creation FROM Usuarios";
+
+    /*Métodos admitidos para el acceso a base de datos*/
+    public function findCustomerByEmail($email){
+        $query = "SELECT nombre, apellido, email, date_of_creation FROM Customer";
 
         $stmt = $this->conexion->prepare($query);
         try{
@@ -24,8 +29,11 @@ class UserService extends Conexion{
         }
     }
 
+    /**
+     * Devuelve toda la lista de clientes.
+     */
     public function findAll(){
-        $query = "CALL obtener_clientes_comercial(1);";
+        $query = "CALL obtener_clientes();";
 
         $stmt = $this->conexion->prepare($query);
         try{
@@ -33,6 +41,25 @@ class UserService extends Conexion{
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch(PDOException $e){
             return $e -> getMessage();
+        } finally{
+            $this -> conexion = null;
+        }
+    }
+
+    /**
+     * Devuelve toda la lista de clientes en función del comercial.
+     */
+    public function findAllByComercial($id){
+        $query = "CALL obtener_clientes_comercial($id);";
+
+        $stmt = $this->conexion->prepare($query);
+        
+        try{
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e){
+            echo $e -> getMessage();
+            return null;
         } finally{
             $this -> conexion = null;
         }
@@ -70,4 +97,5 @@ class UserService extends Conexion{
             $this -> conexion = null;
         }
     }
+
 }

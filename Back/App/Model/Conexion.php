@@ -1,5 +1,5 @@
 <?php
-namespace Service;
+namespace Model;
 
 use PDO;
 use PDOException;

@@ -5,7 +5,7 @@
     "autoload": {
         "psr-4": {
             "Controller\\": "Back/App/Controller",
-            "Service\\": "Back/App/Service"
+            "Model\\": "Back/App/Model"
         }
     },
     "authors": [
