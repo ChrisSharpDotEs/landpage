@@ -11,6 +11,21 @@ html {
   font-size: 1rem;
 }
 
+.chartImg{
+  width: 5rem;
+  background-color: #006b96;
+  border-radius: 11rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.chartImg > svg{
+  width: 3rem;
+  color: white;
+  position: relative;
+  top: 12px;
+}
+
 body {
   font-weight: 400;
   font-size: 1rem;
@@ -119,6 +134,11 @@ h6 {
 .bg-primary ::selection {
   color: #59287a;
   background-color: #fff;
+}
+
+#statistics {
+  width: 100%;
+  height: 80vh;
 }
 
 /*----------------------------------

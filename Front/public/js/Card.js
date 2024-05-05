@@ -5,13 +5,24 @@ export const Card = {
                 style="width: 250px">
                 <div class="card-body text-center">
                     <h5 class="card-title">${title}</h5>
-                    <p class="card-text">
-                        ${content}
-                    </p>
-                    <button id="button_${n}" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" value="${n}">
-                        Consultar
-                    </button>
+                    <div class="row gap-2 justify-content-center my-4">
+                        <div id="button_${n}" class="chartImg col-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
+                                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1z"/>
+                            </svg>
+                        </div>
+                        <div id="" class="chartImg col-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
+                                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1z"/>
+                            </svg>
+                        </div>
+                        <div id="" class="chartImg col-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
+                                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1z"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
         </div>`;
     }

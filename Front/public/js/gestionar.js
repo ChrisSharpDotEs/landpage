@@ -67,7 +67,8 @@ function getUserData() {
 
         [button1, button2].forEach(item => {
             item.addEventListener('click', (e) => {
-                getCustomerData(e.target.value);
+                let comercialId =item.id.replace("button_", "");
+                getCustomerData(parseInt(comercialId));
             })
         });
     })
