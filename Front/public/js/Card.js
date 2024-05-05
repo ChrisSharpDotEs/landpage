@@ -24,6 +24,24 @@ export const Card = {
                         </div>
                     </div>
                 </div>
+                <div class="container">
+                <table class="table table-stripped table-hover">
+                    <thead>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Value 1</td>
+                            <td>Value 1</td>
+                        </tr>
+                        <tr>
+                            <td>Value 1</td>
+                            <td>Value 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
         </div>`;
     }
 }
