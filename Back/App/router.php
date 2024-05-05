@@ -2,12 +2,15 @@
 require '../../vendor/autoload.php';
 
 use Controller\CustomerController;
+use Controller\ComercialController;
+use Controller\TestController;
 
 function routeRequest($url){
     $routes = array(
         '/' => 'WebController/index',
-        '/users' => 'UserController/findAll',
-        '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial'
+        '/comerciales' => 'ComercialController/findAll',
+        '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial',
+        '/test' => 'TestController/test'
     );
 
     list($controllerName, $actionName, $param) = explode("/", $url);
@@ -20,15 +23,21 @@ function routeRequest($url){
     }
     
     list($controllerName, $actionName) = explode("/", $controllerAction);
-
+    
     try{
-        
         switch($controllerName){
             case "CustomerController":
                 $controller = new CustomerController();
                 $controller->$actionName($param);
                 break;
-                
+            case "ComercialController":
+                $controller = new ComercialController();
+                $controller->$actionName($param);
+                break;
+            case "TestController":
+                $controller = new TestController();
+                $controller->$actionName($param);
+                break;
         }
 
     } catch (Error $e){

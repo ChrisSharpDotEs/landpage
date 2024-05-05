@@ -6,11 +6,29 @@ use Model\Conexion;
 use PDO;
 use PDOException;
 
-class User extends Conexion{
+class Comercial extends Conexion{
     
 
     public function __construct(){
         parent::__construct();
+    }
+
+    /**
+     * Llama al procedimiento obtener_comerciales, predefinido en la base de datos.
+     */
+    public function findAll(){
+        $query = "CALL obtener_comerciales();";
+
+        $stmt = $this->conexion->prepare($query);
+        try{
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException $e){
+            echo $e -> getMessage();
+            return null;
+        } finally{
+            $this -> conexion = null;
+        }
     }
 
     /*Métodos admitidos para el acceso a base de datos*/
@@ -22,23 +40,6 @@ class User extends Conexion{
             $stmt->execute();
 
             return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch(PDOException $e){
-            return $e -> getMessage();
-        } finally{
-            $this -> conexion = null;
-        }
-    }
-
-    /**
-     * Llama al procedimiento obtener_clientes_comercial, predefinido en la base de datos.
-     */
-    public function findAll($id){
-        $query = "CALL obtener_clientes_comercial();";
-
-        $stmt = $this->conexion->prepare($query);
-        try{
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch(PDOException $e){
             return $e -> getMessage();
         } finally{
