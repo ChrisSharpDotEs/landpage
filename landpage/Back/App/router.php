@@ -13,12 +13,18 @@ function routeRequest($url){
         '/test' => 'TestController/test'
     );
 
-    list($controllerName, $actionName, $param) = explode("/", $url);
-    $controllerAction = $routes[$controllerName . "/" . $actionName] ?? null;
+    list($controllerName, $method) = explode("/", $url);
 
+    $controllerAction = $routes[$url] ?? null;
+    
     if(!$controllerAction){
-        http_response_code((404));
-        header("Location: ../../proyecto-front/public/error/notfound.html");
+        echo json_encode([
+            "status"=> "error",
+            "response_code" => 404,
+            "message"=> "No se encuentra esa dirección",
+            "debug" => $url,
+            "debug2" => $controllerAction
+        ]);
         exit;
     }
     
@@ -28,15 +34,15 @@ function routeRequest($url){
         switch($controllerName){
             case "CustomerController":
                 $controller = new CustomerController();
-                $controller->$actionName($param);
+                $controller->$actionName();
                 break;
             case "ComercialController":
                 $controller = new ComercialController();
-                $controller->$actionName($param);
+                $controller->$actionName();
                 break;
             case "TestController":
                 $controller = new TestController();
-                $controller->$actionName($param);
+                $controller->$actionName();
                 break;
         }
 

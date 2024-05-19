@@ -27,7 +27,7 @@ class Comercial extends Conexion{
             echo $e -> getMessage();
             return null;
         } finally{
-            $this -> conexion = null;
+            $this->conexion = null;
         }
     }
 

@@ -1,7 +1,8 @@
 <?php
 
 $url = $_SERVER['REQUEST_URI'];
-$url = str_replace("/php/landpage/Front/public/publicRouter.php?", "", $url);
+$dir =  str_replace("/var/www/html", "", __DIR__);
+$url = str_replace($dir . "/publicRouter.php?", "", $url);
 
 chdir("../../Back/App/");
 require '../../Back/App/router.php';
