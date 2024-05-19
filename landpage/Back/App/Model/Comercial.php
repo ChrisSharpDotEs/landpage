@@ -7,7 +7,6 @@ use PDO;
 use PDOException;
 
 class Comercial extends Conexion{
-    
 
     public function __construct(){
         parent::__construct();
@@ -17,18 +16,14 @@ class Comercial extends Conexion{
      * Llama al procedimiento obtener_comerciales, predefinido en la base de datos.
      */
     public function findAll(){
-        $query = "CALL obtener_comerciales();";
+        $query = "SELECT * FROM Comercial;";
 
         $stmt = $this->conexion->prepare($query);
-        try{
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch(PDOException $e){
-            echo $e -> getMessage();
-            return null;
-        } finally{
-            $this->conexion = null;
-        }
+
+        $stmt->execute();
+        $this->conexion = null;
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*Métodos admitidos para el acceso a base de datos*/

@@ -1,10 +1,10 @@
 export const Card = {
-    createCard: function (title, content, n) {
+    createCard: function (Nombre, content, n) {
         return `<div class="card mb-4 p-5 col-lg-4" data-toggle="modal" data-target="#exampleModal">
             <img src="img/pw.jpeg" class="card-img-top rounded-circle mx-auto d-block mt-3" alt="..."
                 style="width: 250px">
                 <div class="card-body text-center">
-                    <h5 class="card-title">${title}</h5>
+                    <h5 class="card-title">${Nombre}</h5>
                     <div class="row gap-2 justify-content-center my-4">
                         <div id="button_${n}" class="chartImg col-3" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">

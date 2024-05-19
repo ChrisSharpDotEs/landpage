@@ -16,22 +16,17 @@ class Conexion {
     public function __construct(){
         $this -> host = "localhost";
         $this -> port = "3306";
-        $this -> db = "departamento_ventas";
+        $this -> db = "testdb";
         $this -> user = "root";
-        $this -> password = "password#A1";
+        $this -> password = "password";
         $this -> dsn = "mysql:host={$this -> host}; port={$this-> port}; dbname={$this -> db}; charset=utf8mb4";
         $this -> conexion = $this -> connect();
     }
 
     public function connect(){
-        try{
-            $conexion = new PDO($this -> dsn, $this -> user, $this -> password);
-            $conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $conexion;
-        }
-        catch(PDOException $e){
-            return $e->getMessage();
-        }
+        $conexion = new PDO($this -> dsn, $this -> user, $this -> password);
+        $conexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $conexion;
     }
 
     public function close(){

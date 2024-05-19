@@ -18,7 +18,7 @@ export const HttpClient = {
         return fetch(url)
         .then(response => {
             if (response.ok && response.status == 200) {
-                return response.text();
+                return response.json();
             }
         })
     }
