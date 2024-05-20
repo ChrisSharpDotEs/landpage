@@ -103,7 +103,6 @@ function showResult(data){
 function getCustomerData(){
     HttpClient.url = "";
     HttpClient.get('./publicRouter.php?/comerciales').then(data =>{
-        console.log(data);
         let card = Object.create(Card);
         let comerciales = document.getElementById("comerciales");
         let content = '';
@@ -117,14 +116,24 @@ function getCustomerData(){
     });
 }
 
+function getCitas() {
+    HttpClient.get('./publicRouter.php?/getCustomersByComercial')
+        .then(data => {
+            console.log(data);
+            Table.appendTableData(data);
+        })
+        .catch(error => console.error(error));
+}
+
 function init(){
     getCustomerData();
+    getCitas();
+    
     let formulario = document.querySelector('form');
     formulario.addEventListener('submit', function(ev){
         ev.preventDefault();
         const datos = new FormData(formulario);
-
-        
+        console.log(datos.values());
     });
 }
 

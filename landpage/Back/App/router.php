@@ -9,7 +9,7 @@ function routeRequest($url){
     $routes = array(
         '/' => 'WebController/index',
         '/comerciales' => 'ComercialController/findAll',
-        '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial',
+        '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial/1',
         '/test' => 'TestController/test'
     );
 
@@ -26,13 +26,13 @@ function routeRequest($url){
         ]);
         exit;
     }
-    
-    list($controllerName, $actionName) = explode("/", $controllerAction);
+
+    list($controllerName, $actionName, $param) = explode("/", $controllerAction);
     
     switch($controllerName){
         case "CustomerController":
             $controller = new CustomerController();
-            $controller->$actionName();
+            $controller->$actionName($param);
             break;
         case "ComercialController":
             $controller = new ComercialController();

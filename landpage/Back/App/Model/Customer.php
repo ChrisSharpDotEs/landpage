@@ -50,7 +50,9 @@ class Customer extends Conexion{
      * Devuelve toda la lista de clientes en función del comercial.
      */
     public function findAllByComercial($id){
-        $query = "CALL obtener_clientes_comercial($id);";
+        $query = "SELECT * FROM customer 
+            JOIN comercial ON customer.id = customer_comercial.id_cliente
+            JOIN comercial ON customer_comercial.id_comercial = comercial.id";
 
         $stmt = $this->conexion->prepare($query);
         
