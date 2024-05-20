@@ -49,7 +49,7 @@ function routeRequest($url){
 try {
     routeRequest($url);
 } catch (Error $e) {
-    echo ($e->getMessage());
+    echo json_encode($e->getMessage());
 } catch (Exception $e){
     var_dump($e);
 }

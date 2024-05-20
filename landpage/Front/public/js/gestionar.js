@@ -97,7 +97,6 @@ function showResult(data){
     else {
         formu.innerHTML = contentNo;
     }
-    console.log(data);
 }
 
 function getCustomerData(){
@@ -116,10 +115,9 @@ function getCustomerData(){
     });
 }
 
-function getCitas() {
+function getCustomersByComercial() {
     HttpClient.get('./publicRouter.php?/getCustomersByComercial')
         .then(data => {
-            console.log(data);
             Table.appendTableData(data);
         })
         .catch(error => console.error(error));
@@ -127,7 +125,7 @@ function getCitas() {
 
 function init(){
     getCustomerData();
-    getCitas();
+    getCustomersByComercial();
     
     let formulario = document.querySelector('form');
     formulario.addEventListener('submit', function(ev){

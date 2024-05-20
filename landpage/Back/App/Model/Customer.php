@@ -50,19 +50,19 @@ class Customer extends Conexion{
      * Devuelve toda la lista de clientes en función del comercial.
      */
     public function findAllByComercial($id){
-        $query = "SELECT * FROM customer 
-            JOIN comercial ON customer.id = customer_comercial.id_cliente
-            JOIN comercial ON customer_comercial.id_comercial = comercial.id";
+        $query = "SELECT customer.id, customer.nombre, customer.fecha_creacion FROM customer
+            LEFT JOIN customer_comercial ON customer.id = customer_comercial.id_cliente
+            JOIN comercial ON customer_comercial.id_comercial = comercial.id
+            WHERE comercial.id = :id;";
 
         $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(":id", $id);
         
         try{
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch(PDOException $e){
-            echo $e -> getMessage();
-            return null;
-        } finally{
+        }
+        finally{
             $this -> conexion = null;
         }
     }

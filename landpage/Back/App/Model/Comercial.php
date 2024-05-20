@@ -16,7 +16,7 @@ class Comercial extends Conexion{
      * Llama al procedimiento obtener_comerciales, predefinido en la base de datos.
      */
     public function findAll(){
-        $query = "SELECT * FROM Comercial;";
+        $query = "SELECT * FROM comercial;";
 
         $stmt = $this->conexion->prepare($query);
 
