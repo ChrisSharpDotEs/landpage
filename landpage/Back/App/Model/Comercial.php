@@ -42,8 +42,12 @@ class Comercial extends Conexion{
         }
     }
 
-    public function obtenerCitas(){
-        $query = "CALL obtener_citas();";
+    public function obtenerCitas($id){
+        $query = "SELECT cita.id, customer.nombre, customer.id, cita.fecha, cita.hora
+        FROM cita 
+        LEFT JOIN citas_comercial_customer on cita.id = citas_comercial_customer.id_cita
+        LEFT JOIN customer ON citas_comercial_customer.id_cliente = customer.id
+        WHERE citas_comercial_customer.id_comercial = 1";
 
         $stmt = $this->conexion->prepare($query);
         try{

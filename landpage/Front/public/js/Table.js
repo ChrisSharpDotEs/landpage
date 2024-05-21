@@ -1,5 +1,5 @@
 export const Table = {
-    appendTableData(data){
+    appendTableData(data, index){
         data.forEach(element => {
             let row = document.createElement('tr');
             
@@ -9,7 +9,7 @@ export const Table = {
                 row.append(cell);
             });
     
-            let tbody = document.getElementsByTagName("tbody")[0];
+            let tbody = document.getElementsByTagName("tbody")[index];
             tbody.append(row);
         });
     }

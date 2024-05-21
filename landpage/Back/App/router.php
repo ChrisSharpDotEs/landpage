@@ -10,7 +10,7 @@ function routeRequest($url){
         '/' => 'WebController/index',
         '/comerciales' => 'ComercialController/findAll',
         '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial/1',
-        '/getComercialCitas' => 'ComercialController/findAll',
+        '/getComercialCitas' => 'ComercialController/getComercialCitas/1',
         '/test' => 'TestController/test'
     );
 
@@ -37,7 +37,7 @@ function routeRequest($url){
             break;
         case "ComercialController":
             $controller = new ComercialController();
-            $controller->$actionName();
+            $controller->$actionName($param);
             break;
         case "TestController":
             $controller = new TestController();

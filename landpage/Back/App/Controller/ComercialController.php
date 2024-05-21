@@ -15,8 +15,12 @@ class ComercialController{
         echo json_encode($result);
     }
 
-    public function create($username, $useremail, $userpass){
-       
+    public function getComercialCitas($id){
+        $comercial = new Comercial();
+
+        $result = $comercial->obtenerCitas($id);
+        
+        echo json_encode($result);
     }
     
 }

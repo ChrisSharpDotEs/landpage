@@ -99,6 +99,21 @@ function showResult(data){
     }
 }
 
+function getCitas() {
+    let url = "./publicRouter.php?/getComercialCitas";
+    fetch(url)
+        .then(response => {
+            if (response.ok && response.status == 200) {
+                return response.json();
+            }
+        })
+        .then(data => {
+            console.log(data);
+            Table.appendTableData(data, 1);
+        })
+        .catch(error => console.error(error));
+}
+
 function getCustomerData(){
     HttpClient.url = "";
     HttpClient.get('./publicRouter.php?/comerciales').then(data =>{
@@ -118,7 +133,8 @@ function getCustomerData(){
 function getCustomersByComercial() {
     HttpClient.get('./publicRouter.php?/getCustomersByComercial')
         .then(data => {
-            Table.appendTableData(data);
+            console.log(data);
+            Table.appendTableData(data, 0);
         })
         .catch(error => console.error(error));
 }
@@ -126,7 +142,7 @@ function getCustomersByComercial() {
 function init(){
     getCustomerData();
     getCustomersByComercial();
-    
+    getCitas();
     let formulario = document.querySelector('form');
     formulario.addEventListener('submit', function(ev){
         ev.preventDefault();
