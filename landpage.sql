@@ -1,24 +1,24 @@
-CREATE TABLE IF NOT EXISTS Customer (
+CREATE TABLE IF NOT EXISTS customer (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
     fecha_creacion DATE NOT NULL
 );
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Juan Perez', '2023-01-01');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Maria Gomez', '2023-02-15');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Carlos Rodriguez', '2023-03-10');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Ana Martinez', '2023-04-05');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Luis Hernandez', '2023-05-20');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Sofia Ramirez', '2023-06-25');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Miguel Torres', '2023-07-30');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Laura Diaz', '2023-08-18');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Jorge Lopez', '2023-09-12');
-INSERT INTO Customer (nombre, fecha_creacion) VALUES ('Elena Castillo', '2023-10-01');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Juan Perez', '2023-01-01');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Maria Gomez', '2023-02-15');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Carlos Rodriguez', '2023-03-10');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Ana Martinez', '2023-04-05');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Luis Hernandez', '2023-05-20');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Sofia Ramirez', '2023-06-25');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Miguel Torres', '2023-07-30');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Laura Diaz', '2023-08-18');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Jorge Lopez', '2023-09-12');
+INSERT INTO customer (nombre, fecha_creacion) VALUES ('Elena Castillo', '2023-10-01');
 
 CREATE TABLE IF NOT EXISTS customer_comercial (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_cliente INT NOT NULL,
     id_comercial INT NOT NULL,
-    FOREIGN KEY (id_cliente) REFERENCES Customer(id),
+    FOREIGN KEY (id_cliente) REFERENCES customer(id),
     FOREIGN KEY (id_comercial) REFERENCES Comercial(id)
 );
 

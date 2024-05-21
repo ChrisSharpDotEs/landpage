@@ -1,8 +1,8 @@
 export const Table = {
     appendTableData(data){
         data.forEach(element => {
-            let row = document.createElement('row');
-    
+            let row = document.createElement('tr');
+            
             Object.keys(element).forEach(item =>{
                 let cell = document.createElement('td');
                 cell.innerHTML = element[item];

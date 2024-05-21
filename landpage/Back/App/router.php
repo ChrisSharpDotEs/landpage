@@ -10,6 +10,7 @@ function routeRequest($url){
         '/' => 'WebController/index',
         '/comerciales' => 'ComercialController/findAll',
         '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial/1',
+        '/getComercialCitas' => 'ComercialController/findAll',
         '/test' => 'TestController/test'
     );
 
