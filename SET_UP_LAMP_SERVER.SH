@@ -95,7 +95,9 @@ fi
 
 # Esperar entrada del usuario para cerrar el terminal
 echo "1. AHORA DEBES DESCARGAR LA ÚLTIMA VERSIÓN DE PHPMYADMIN EN https://www.phpmyadmin.net/, LO DESCOMPRIMES Y LO MUEVES A LA CARPETA /VAR/WWW/HTML"
-echo "2. ACCEDE A LA RUTA http://localhost/phmyadmin, VERÁS UN ERROR.
+echo "2. ACCEDE A LA RUTA http://localhost/phmyadmin, VERÁS UN ERROR."
 echo "3. ABRE EL ARCHIVO PHP.INI QUE DEBE ESTAR EN /etc/php/8.1/apache2/php.ini"
 echo "4. Descomenta la línea que dice ;    extension=mysqli y reinicia APACHE EL ERROR DEBERÁ HABER DESAPARECIDO."
-read -p "Presiona Enter para salir...
+read -p "Presiona Enter para continuar..."
+read -p "¿Quieres instalar NodeJs? (s/n): " r$espuesta
+read $respuesta =$(echo "$respuesta" | tr '[:upper:]' '[:lower:]')
