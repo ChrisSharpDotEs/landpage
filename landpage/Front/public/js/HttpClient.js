@@ -14,12 +14,10 @@ export const HttpClient = {
         })
         .catch(error => console.error(error));
     },
-    get(url) {
-        return fetch(url)
-        .then(response => {
-            if (response.ok && response.status == 200) {
-                return response.json();
-            }
-        })
+    async get(url) {
+        const response = await fetch(url);
+        if (response.ok && response.status == 200) {
+            return response.json();
+        }
     }
 }

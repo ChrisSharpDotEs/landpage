@@ -47,9 +47,11 @@ class Comercial extends Conexion{
         FROM cita 
         LEFT JOIN citas_comercial_customer on cita.id = citas_comercial_customer.id_cita
         LEFT JOIN customer ON citas_comercial_customer.id_cliente = customer.id
-        WHERE citas_comercial_customer.id_comercial = 1";
+        WHERE citas_comercial_customer.id_comercial = :id";
 
         $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(":id", $id);
+        
         try{
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);

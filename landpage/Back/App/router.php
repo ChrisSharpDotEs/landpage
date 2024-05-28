@@ -9,8 +9,9 @@ function routeRequest($url){
     $routes = array(
         '/' => 'WebController/index',
         '/comerciales' => 'ComercialController/findAll',
-        '/getCustomersByComercial' => 'CustomerController/getCustomersByComercial/1',
-        '/getComercialCitas' => 'ComercialController/getComercialCitas/1',
+        '/getCustomersByComercial/1' => 'CustomerController/getCustomersByComercial/1',
+        '/getComercialCitas/1' => 'ComercialController/getComercialCitas/1',
+        '/getComercialCitas/2' => 'ComercialController/getComercialCitas/2',
         '/test' => 'TestController/test'
     );
 

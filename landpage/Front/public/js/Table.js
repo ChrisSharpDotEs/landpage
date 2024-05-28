@@ -8,8 +8,9 @@ export const Table = {
                 cell.innerHTML = element[item];
                 row.append(cell);
             });
-    
+            
             let tbody = document.getElementsByTagName("tbody")[index];
+            
             tbody.append(row);
         });
     }
