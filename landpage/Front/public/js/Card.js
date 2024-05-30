@@ -1,6 +1,6 @@
 export const Card = {
     createCard: function (Nombre, content, n) {
-        return `<div class="card mb-4 p-5 col-lg-4">
+        return `<div class="card mb-4 p-5 col-lg-3">
             <img src="img/pw.jpeg" class="card-img-top rounded-circle mx-auto d-block mt-3" alt="..."
                 style="width: 250px">
             <div class="card-body text-center">

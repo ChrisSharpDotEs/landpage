@@ -6,7 +6,6 @@ export const ComercialManager = {
     getComerciales(){
         HttpClient.url = "";
         HttpClient.get('./publicRouter.php?/comerciales').then(data =>{
-            console.log(data);
             let card = Object.create(Card);
             let comerciales = document.getElementById("comerciales");
             let content = '';
@@ -19,14 +18,13 @@ export const ComercialManager = {
                 let button = document.getElementById('button_' + item.ID);
                 button.addEventListener('click', (e) => {
                     this.getCitas(item.ID);
-                })
-            })
-
+                    this.getCustomersByComercial(item.ID);
+                });
+            });
         });
     },
     getCitas(id) {
-        let url = "./publicRouter.php?/getComercialCitas/" + id;
-        console.log(url);
+        let url = './publicRouter.php?/getComercialCitas/' + id;
         fetch(url)
             .then(response => {
                 if (response.ok && response.status == 200) {
@@ -40,11 +38,19 @@ export const ComercialManager = {
             })
             .catch(error => console.error(error));
     },
-    getCustomersByComercial() {
-        HttpClient.get('./publicRouter.php?/getCustomersByComercial')
-            .then(data => {
-                Table.appendTableData(data, 0);
-            })
-            .catch(error => console.error(error));
+    getCustomersByComercial(id) {
+        fetch('./publicRouter.php?/getCustomersByComercial/' + id)
+        .then(response => {
+            if(response.ok && response.status == 200){
+                return response.json();
+            }
+        })
+        .then(data => {
+            if(data.status == "error") return null;
+            let tbody = document.getElementsByTagName("tbody")[0];
+            tbody.innerHTML = '';
+            Table.appendTableData(data, 0);
+        })
+        .catch(error => console.error(error));
     }
 }
