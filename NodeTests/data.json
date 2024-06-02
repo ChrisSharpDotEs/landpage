@@ -1,0 +1,28 @@
+{
+    "nombre": "Juan Pérez",
+    "edad": 30,
+    "email": "juan@example.com",
+    "direccion": {
+        "calle": "Calle Principal",
+        "ciudad": "Ciudad Ejemplo",
+        "codigo_postal": "12345",
+        "pais": "Ejemplo"
+    },
+    "intereses": [
+        "programación",
+        "viajes",
+        "lectura"
+    ],
+    "amigos": [
+        {
+            "nombre": "María García",
+            "edad": 28,
+            "email": "maria@example.com"
+        },
+        {
+            "nombre": "Carlos Martínez",
+            "edad": 32,
+            "email": "carlos@example.com"
+        }
+    ]
+}

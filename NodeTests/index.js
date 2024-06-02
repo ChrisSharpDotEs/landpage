@@ -1,20 +1,22 @@
-class Extractor {
-    #value;
-    constructor(html, pattern){
-        this.#value = this.#extract(html, pattern)
-    }
-
-    getValue(){
-        return this.#value;
-    }
-    
-    #extract(html, pattern){
-        let capture = pattern.exec(html);
-        return capture[1];
-    }
+function tirar() {
+    return new Promise((resolve, reject) =>{
+        const hits = Math.round(Math.random() * 10);
+        const time = Math.round(Math.random() * 2000);
+        if(hits > 0){
+            setTimeout(resolve(hits), time);
+        } else {
+            setTimeout(reject(hits), time);
+        }
+    });
 }
-let html = 'https://www.google.es/?gws_rd=ssl';
 
-let image = new Extractor(html, new RegExp(/.png/));
 
-console.log(image);
+var tirada = [];
+let turn = tirar();
+    
+turn
+.then(
+    hits => hits
+);
+
+console.log(turn['[[PromiseResult]]'])
